@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Number FSM | Project 3 | Nathan Peredery</title>
+  <meta name="description" content="Project 3 case study: a finite state machine that drives a repeated-digit 7-segment display sequence." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Engineering domain navigation">
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electrical</a>
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+        <p class="drawer-title">+-- domains --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electrical</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 3 / ELECTRONIC</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Student Number FSM</h1>
+                <p class="subtitle">A logic design project that uses JK flip-flops and custom encoding to drive a 7-segment display through a repeated-digit sequence.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Finite state machine illustration" data-art="fsm" /></div>
+                <ul class="terminal-list">
+                  <li>Role: digital logic design and debugging</li>
+                  <li>Focus: state encoding and stable transitions</li>
+                  <li>Constraint: repeated digits without incorrect looping</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>The goal was to display a nine-digit student number on a 7-segment display, including repeated digits that could not be treated as a simple linear state chain.</p>
+                <p>That made the project a good test of sequential logic, encoding discipline, and careful transition planning.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>Use JK flip-flops for the state machine</li>
+                  <li>Keep the architecture NAND-only where possible</li>
+                  <li>Support manual reset</li>
+                  <li>Drive a readable 7-segment output</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li>A 4-bit state controller for the display sequence</li>
+                  <li>A custom encoding scheme to distinguish repeated digits</li>
+                  <li>MSOP expressions converted into NAND-only logic</li>
+                  <li>Synchronous transitions with a manual reset path</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>This project is easy to understand from both a hardware and a systems perspective. The circuit has to be small enough to be elegant, but also predictable enough to behave correctly every time it resets and advances.</p>
+                <p>That makes it useful evidence for any reviewer who cares about logic design, state management, or debugging under constraints.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The final FSM handled the repeated-digit sequence correctly and produced a stable display path for the student number.</p>
+                <p>It also demonstrated how a compact state encoding can keep a logic design manageable without sacrificing correctness.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>State encoding is part of the design, not just a bookkeeping step</li>
+                  <li>Reset behavior matters as much as the nominal sequence</li>
+                  <li>Readable case studies should explain the logic in plain language</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../electronic.html">Back to electronic</a>
+                  <a class="ascii-button" href="../index.html#featured">View featured projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 3</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

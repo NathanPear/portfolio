@@ -1,0 +1,51 @@
+PROJECTS.JSON METADATA SCHEMA DEFINITION
+
+This file describes the schema structure, fields, and expected values for each entry in 'data/projects.json'.
+
+--------------------------------------------------------------------------------
+FIELDS
+--------------------------------------------------------------------------------
+
+- slug
+  - Type: String (unique)
+  - Purpose: A URL-safe identifier for the project. Used inside link logic and files.
+  - Example: "automated-medical-document-synthesis"
+
+- title
+  - Type: String
+  - Purpose: The text displayed as the primary header on project cards and pages.
+  - Example: "Automated Medical Document Synthesis"
+
+- summary
+  - Type: String
+  - Purpose: A short 1-2 sentence description shown in the project card preview.
+  - Example: "A full-stack web app that turns structured clinic data into consult letters."
+
+- tags
+  - Type: Array of Strings
+  - Purpose: Categories that determine which page(s) render this project card.
+  - Allowed Values:
+    - "software"
+    - "digital"
+    - "mechanical"
+    - "physical"
+    - "electrical"
+    - "electronic"
+    - "integrated"
+    - "featured"
+  - Note: A project can have multiple tags (e.g., ["mechanical", "physical", "featured"]).
+
+- image
+  - Type: String
+  - Purpose: Relative path from repository root to the preview image for cards.
+  - Format: "assets/images/Physical/image_filename.jpg" or "" (empty string) if no image is available.
+
+- url
+  - Type: String
+  - Purpose: Relative path from repository root to the detail HTML file.
+  - Example: "projects/project-1-automated-medical-document-synthesis.html"
+
+- order
+  - Type: Integer
+  - Purpose: Dictates the display priority (lower numbers appear first on the page).
+  - Recommended Convention: Use increments of 1000 (e.g. 1000, 2000, 3000) to allow easy insertion of new projects without re-indexing existing ones.

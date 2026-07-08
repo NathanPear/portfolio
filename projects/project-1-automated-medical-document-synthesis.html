@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated Medical Document Synthesis | Project 1 | Nathan Peredery</title>
+  <meta name="description" content="Project 1 case study: secure consult-letter automation for a high-volume medical practice." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Engineering domain navigation">
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electrical</a>
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+        <p class="drawer-title">+-- domains --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electrical</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 1 / SOFTWARE</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Automated Medical Document Synthesis</h1>
+                <p class="subtitle">A full-stack workflow that generates consult letters from structured clinic data while keeping patient information inside the secure environment.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Medical document automation illustration" data-art="docs" /></div>
+                <ul class="terminal-list">
+                  <li>Role: independent software design and build</li>
+                  <li>Focus: workflow automation and document generation</li>
+                  <li>Constraint: sensitive data stays in the clinic ecosystem</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>A high-volume medical practice in British Columbia needed to produce consult letters repeatedly, with many variable fields and a strong privacy requirement.</p>
+                <p>The work was not just a software convenience problem. It was an operations problem, a documentation problem, and a data-handling problem at the same time.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>Generate complex letters from structured clinic inputs</li>
+                  <li>Keep patient data inside the secure ecosystem</li>
+                  <li>Support multiple templates based on the presenting issue</li>
+                  <li>Keep output readable and professional for clinical use</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li>A custom parsing engine to map clinic data into document fields</li>
+                  <li>Regex-based placeholder replacement for repeatable text blocks</li>
+                  <li>Template selection logic that routes to the right consult-letter format</li>
+                  <li>Input sanitization to keep the generated output stable</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>This project sits at the intersection of software engineering, clinical workflow design, and information handling. A reviewer from any of those backgrounds can follow the value quickly: less repetitive drafting, fewer privacy concerns, and more consistent output.</p>
+                <p>It also shows a systems mindset. The deliverable was not just a script, but a workflow that had to be dependable inside a real operational environment.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The final system automated the repetitive parts of consult-letter creation while preserving the secure handling constraints that mattered most to the clinic.</p>
+                <p>That made the output easier to standardize, faster to produce, and more reliable to review than a fully manual process.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>Automation is only useful if it respects real-world constraints</li>
+                  <li>Clinical software needs correctness, clarity, and privacy</li>
+                  <li>Good case studies explain both the build and the reason for the build</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../software.html">Back to software</a>
+                  <a class="ascii-button" href="../index.html#featured">View featured projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 1</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

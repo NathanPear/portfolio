@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathan Peredery | Engineering Portfolio</title>
+  <!-- mockup v13: wrapped scroll shell with themed external scrollbar -->
+  <style>
+    :root {
+      --bg: #f7f0df;
+      --text: #111111;
+      --muted: #4f4a42;
+      --line: #111111;
+      --card: #fff8e8;
+      --soft: #efe4cc;
+      --shadow: rgba(17, 17, 17, 0.13);
+      --page-max: 1120px;
+      --page-pad: 16px;
+      --topbar-height: 62px;
+      --mono: "Courier New", monospace;
+      --scrollbar-space: 16px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #15130f;
+      --text: #f7f0df;
+      --muted: #c9c0ad;
+      --line: #f7f0df;
+      --card: #1f1b16;
+      --soft: #2a241d;
+      --shadow: rgba(247, 240, 223, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      max-width: 100%;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      max-width: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      line-height: 1.55;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .site-viewport {
+      position: fixed;
+      inset: 0;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background: var(--bg);
+      scrollbar-width: thin;
+      scrollbar-color: var(--line) var(--bg);
+      scrollbar-gutter: stable;
+    }
+
+    .site-viewport::-webkit-scrollbar {
+      width: 16px;
+      height: 16px;
+    }
+
+    .site-viewport::-webkit-scrollbar-track {
+      background: var(--bg);
+      border-left: 1px solid var(--line);
+    }
+
+    .site-viewport::-webkit-scrollbar-button {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    .site-viewport::-webkit-scrollbar-thumb {
+      background: var(--line);
+      border: 5px solid var(--bg);
+      min-height: 42px;
+    }
+
+    .site-viewport::-webkit-scrollbar-thumb:hover {
+      border-width: 4px;
+    }
+
+    .site-viewport::-webkit-scrollbar-corner {
+      background: var(--bg);
+    }
+
+    .site-shell {
+      width: 100%;
+      min-height: 100%;
+      max-width: 100%;
+      overflow-x: clip;
+      background: var(--bg);
+    }
+
+    button,
+    input,
+    textarea,
+    select { font-family: var(--mono); }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    .page {
+      width: min(var(--page-max), calc(100% - (var(--page-pad) * 2)));
+      max-width: 100%;
+      margin: 0 auto;
+      min-width: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 50;
+      background: color-mix(in srgb, var(--bg) 94%, transparent);
+      backdrop-filter: blur(8px);
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    .topbar-inner {
+      display: grid;
+      grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 0 8px;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .topbar-spacer { display: none; }
+
+    .wordmark {
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: clamp(0.86rem, 2vw, 1rem);
+    }
+
+    .wordmark::before { content: "["; color: var(--muted); }
+    .wordmark::after { content: "]"; color: var(--muted); }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: nowrap;
+      font-size: 0.92rem;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .toolbar-controls {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .ascii-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      max-width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      line-height: 1;
+      padding: 7px 9px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .ascii-button::before { content: "[ "; color: var(--muted); }
+    .ascii-button::after { content: " ]"; color: var(--muted); }
+
+    .ascii-button:hover,
+    .ascii-button:focus-visible {
+      background: var(--soft);
+      outline: 1px dashed var(--line);
+      outline-offset: -3px;
+    }
+
+    .theme-toggle,
+    .menu-toggle {
+      aspect-ratio: 1 / 1;
+      width: 38px;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+
+    .theme-glyph,
+    .menu-glyph {
+      display: inline-block;
+      min-width: 1ch;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .menu-toggle { display: none; }
+
+    .rule-line,
+    .rule-segment {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      height: 1em;
+      overflow: hidden;
+      white-space: nowrap;
+      color: var(--line);
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      line-height: 1;
+      user-select: none;
+      isolation: isolate;
+    }
+
+    .rule-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .rule-cap-left,
+    .rule-cap-right {
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      display: inline-block;
+      width: 1ch;
+      line-height: 1;
+      text-align: center;
+      pointer-events: none;
+      background: var(--rule-cap-bg, var(--bg));
+    }
+
+    .rule-cap-left { left: 0; }
+    .rule-cap-right { right: 0; }
+
+    .box-content { --rule-cap-bg: var(--card); }
+    .image-slot { --rule-cap-bg: var(--soft); }
+    .topbar,
+    .footer,
+    .section-title,
+    .ascii-box { --rule-cap-bg: var(--bg); }
+
+    .viewport-rule {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      padding-bottom: 2px;
+      position: relative;
+    }
+
+    .viewport-rule .rule-line {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    main,
+    section,
+    article,
+    aside,
+    div { min-width: 0; }
+
+    section[id] { scroll-margin-top: calc(var(--topbar-height) + 18px); }
+
+    .hero { padding: 52px 0 30px; }
+
+    .ascii-box {
+      position: relative;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .box-content {
+      max-width: 100%;
+      min-width: 0;
+      background: var(--card);
+      padding: 22px;
+      overflow-wrap: anywhere;
+      box-shadow: 8px 0 0 var(--shadow);
+    }
+
+    .panel .box-content { min-height: 100%; }
+
+    .ascii-kicker {
+      color: var(--muted);
+      margin: 0 0 16px;
+      max-width: 100%;
+    }
+
+    .ascii-kicker .rule-line { font-size: 0.82rem; }
+    .ascii-kicker span:not(.rule-line) { display: block; padding: 6px 0; }
+
+    h1 {
+      margin: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      font-size: clamp(2.1rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.08em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      margin: 22px 0 0;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--muted);
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+      max-width: 100%;
+    }
+
+    .section { padding: 42px 0; }
+
+    .section-title {
+      position: relative;
+      display: block;
+      min-width: 0;
+      max-width: 100%;
+      height: 1.45em;
+      margin: 0 0 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      text-align: center;
+      line-height: 1.45;
+      overflow: hidden;
+    }
+
+    .section-title > span:not(.rule-segment) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+      display: inline-block;
+      transform: translate(-50%, -50%);
+      background: var(--bg);
+      padding: 0 1.15ch;
+      white-space: nowrap;
+      text-align: center;
+      text-indent: 0.08em;
+      line-height: 1.45;
+    }
+
+    .section-title .rule-segment:first-child {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .section-title .rule-segment:last-child {
+      display: none;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 32px;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .panel,
+    .project-card { min-width: 0; }
+
+    .panel p:first-child { margin-top: 0; }
+    .panel p:last-child { margin-bottom: 0; }
+
+    .terminal-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .terminal-list li { margin: 0 0 10px; }
+    .terminal-list li::before { content: "> "; color: var(--muted); }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px 18px;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .project-card {
+      min-height: 360px;
+      transition: transform 120ms ease;
+    }
+
+    .project-card:hover {
+      transform: translate(-1px, -1px);
+    }
+
+    .project-card:hover .box-content {
+      box-shadow: 10px 0 0 var(--shadow);
+    }
+
+    .project-card .box-content {
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .image-slot {
+      height: 150px;
+      max-width: 100%;
+      background: var(--soft);
+      padding: 8px;
+      overflow: hidden;
+    }
+
+    .image-slot::after {
+      content: "---------------- IMAGE ----------------";
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 7px;
+    }
+
+    .image-slot img {
+      height: calc(100% - 26px);
+      filter: grayscale(1) contrast(1.1);
+      background: var(--bg);
+    }
+
+    .project-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .project-body h3 {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .project-body h3::before { content: "./"; color: var(--muted); }
+
+    .project-body p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-width: 100%;
+    }
+
+    .tag { font-size: 0.75rem; }
+    .tag::before { content: "<"; color: var(--muted); }
+    .tag::after { content: ">"; color: var(--muted); }
+
+    .footer {
+      margin: 54px auto 28px;
+      padding-top: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    .footer .rule-line { flex-basis: 100%; }
+
+    .drawer-scrim {
+      position: fixed;
+      inset: var(--topbar-height) 0 0 0;
+      z-index: 40;
+      background: color-mix(in srgb, var(--bg) 62%, transparent);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 160ms ease;
+    }
+
+    .side-drawer {
+      position: fixed;
+      top: var(--topbar-height);
+      right: var(--scrollbar-space);
+      bottom: 0;
+      z-index: 45;
+      width: min(292px, calc(100vw - var(--scrollbar-space) - 28px));
+      max-width: calc(100vw - var(--scrollbar-space) - 28px);
+      background: var(--card);
+      border-left: 1px solid var(--line);
+      transform: translateX(100%);
+      transition: transform 180ms ease;
+      box-shadow: -8px 0 0 var(--shadow);
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 12px;
+    }
+
+    .side-drawer.is-open { transform: translateX(0); }
+    .drawer-scrim.is-open { opacity: 1; pointer-events: auto; }
+
+    .drawer-title {
+      margin: 0 0 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+    }
+
+    .drawer-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
+
+    .drawer-nav .ascii-button {
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    @media (max-width: 860px) {
+      .about-layout,
+      .featured-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      :root { --page-pad: 12px; }
+
+      .topbar-inner {
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        gap: 6px;
+      }
+
+      .nav { display: none; }
+      .menu-toggle { display: inline-flex; }
+
+      .theme-toggle,
+      .menu-toggle {
+        width: 34px;
+        min-height: 32px;
+      }
+
+      .box-content { padding: 16px; }
+      .hero { padding-top: 34px; }
+      .section { padding: 34px 0; }
+      .section-title { height: 1.45em; }
+      .section-title > span:not(.rule-segment) { padding: 0 0.9ch; }
+    }
+
+    @media (max-width: 390px) {
+      :root { --page-pad: 10px; }
+      .wordmark { letter-spacing: 0.03em; }
+      .hero-links .ascii-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-viewport" id="site-viewport">
+    <div class="site-shell">
+  <header class="topbar" id="topbar">
+    <div class="page topbar-inner">
+      <a class="wordmark" href="#">Nathan Peredery</a>
+      <nav class="nav" aria-label="Engineering domain navigation">
+        <a class="ascii-button" href="#mechanical">Mechanical</a>
+        <a class="ascii-button" href="#electrical">Electrical</a>
+        <a class="ascii-button" href="#software">Software</a>
+        <a class="ascii-button" href="#integrated">Integrated</a>
+      </nav>
+      <div class="toolbar-controls">
+        <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="menu-glyph">☰</span></button>
+        <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="theme-glyph">☀</span></button>
+      </div>
+    </div>
+    <div class="viewport-rule"><span class="rule-line" data-rule="=">++</span></div>
+  </header>
+
+  <div class="topbar-spacer" aria-hidden="true"></div>
+
+  <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+  <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+    <p class="drawer-title">+-- domains --+</p>
+    <nav class="drawer-nav">
+      <a class="ascii-button" href="#mechanical">Mechanical</a>
+      <a class="ascii-button" href="#electrical">Electrical</a>
+      <a class="ascii-button" href="#software">Software</a>
+      <a class="ascii-button" href="#integrated">Integrated</a>
+    </nav>
+  </aside>
+
+  <main class="page">
+    <section class="hero">
+      <div class="ascii-box">
+        <span class="rule-line" data-rule="=">++</span>
+        <div class="box-content">
+          <p class="ascii-kicker">
+            <span class="rule-line" data-rule="-">++</span>
+            <span>MECHATRONICS / AUTOMATION / SYSTEMS / PRACTICAL BUILDS</span>
+            <span class="rule-line" data-rule="-">++</span>
+          </p>
+          <h1>Engineering<br />Portfolio</h1>
+          <p class="subtitle">
+            I build practical systems across mechanical design, electrical logic, software automation, and integrated engineering workflows.
+          </p>
+          <div class="hero-links" aria-label="Landing page shortcuts">
+            <a class="ascii-button" href="#about">About Me</a>
+            <a class="ascii-button" href="#featured">Featured Work</a>
+            <a class="ascii-button" href="#resume">Resume Sets</a>
+          </div>
+        </div>
+        <span class="rule-line" data-rule="=">++</span>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">
+        <span class="rule-segment" data-rule="-"></span>
+        <span>About Me</span>
+        <span class="rule-segment" data-rule="-"></span>
+      </h2>
+      <div class="about-layout">
+        <div class="ascii-box panel">
+          <span class="rule-line" data-rule="=">++</span>
+          <div class="box-content">
+            <p>
+              I am a Mechatronics Engineering student focused on building useful engineering systems, not just isolated assignments. My work tends to sit between mechanical design, electrical/control logic, and software automation.
+            </p>
+            <p>
+              This portfolio is organized around proof-of-work: what problem existed, what constraints mattered, what I built, and what the result was.
+            </p>
+          </div>
+          <span class="rule-line" data-rule="=">++</span>
+        </div>
+        <aside class="ascii-box panel">
+          <span class="rule-line" data-rule="=">++</span>
+          <div class="box-content">
+            <ul class="terminal-list">
+              <li>Current focus: automation, CAD, embedded systems, engineering tools</li>
+              <li>Tools: SolidWorks, Python, C/C++, JavaScript, Git, Multisim</li>
+              <li>Looking for: co-op / internship / project-based engineering work</li>
+              <li>Signal: practical builds with real constraints</li>
+            </ul>
+          </div>
+          <span class="rule-line" data-rule="=">++</span>
+        </aside>
+      </div>
+    </section>
+
+    <section id="featured" class="section">
+      <h2 class="section-title">
+        <span class="rule-segment" data-rule="-"></span>
+        <span>Featured Sections</span>
+        <span class="rule-segment" data-rule="-"></span>
+      </h2>
+      <div class="featured-grid">
+        <article class="ascii-box project-card" id="software">
+          <span class="rule-line" data-rule="=">++</span>
+          <div class="box-content">
+            <div class="image-slot">
+              <img alt="Placeholder screenshot for consult letter pipeline" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 420'%3E%3Crect width='900' height='420' fill='%23f7f0df'/%3E%3Crect x='70' y='60' width='760' height='300' fill='none' stroke='%23111111' stroke-width='8'/%3E%3Cline x1='120' y1='125' x2='520' y2='125' stroke='%23111111' stroke-width='10'/%3E%3Cline x1='120' y1='180' x2='720' y2='180' stroke='%23111111' stroke-width='10'/%3E%3Cline x1='120' y1='235' x2='650' y2='235' stroke='%23111111' stroke-width='10'/%3E%3Cline x1='120' y1='290' x2='390' y2='290' stroke='%23111111' stroke-width='10'/%3E%3C/svg%3E" />
+            </div>
+            <div class="project-body">
+              <h3>Consult Letter Pipeline</h3>
+              <p>Workflow automation project for turning structured clinical inputs into editable consult letters.</p>
+              <div class="tags">
+                <span class="tag">software</span>
+                <span class="tag">automation</span>
+                <span class="tag">workflow</span>
+              </div>
+            </div>
+          </div>
+          <span class="rule-line" data-rule="=">++</span>
+        </article>
+
+        <article class="ascii-box project-card" id="mechanical">
+          <span class="rule-line" data-rule="=">++</span>
+          <div class="box-content">
+            <div class="image-slot">
+              <img alt="Placeholder image for airport sorting system" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 420'%3E%3Crect width='900' height='420' fill='%23f7f0df'/%3E%3Crect x='70' y='220' width='760' height='45' fill='%23111111'/%3E%3Ccircle cx='180' cy='310' r='42' fill='none' stroke='%23111111' stroke-width='9'/%3E%3Ccircle cx='705' cy='310' r='42' fill='none' stroke='%23111111' stroke-width='9'/%3E%3Crect x='320' y='105' width='170' height='110' fill='none' stroke='%23111111' stroke-width='9'/%3E%3Cpath d='M540 205 L685 105 L720 150 L575 250 Z' fill='none' stroke='%23111111' stroke-width='9'/%3E%3C/svg%3E" />
+            </div>
+            <div class="project-body">
+              <h3>Airport Sorting System</h3>
+              <p>Integrated mechatronics project combining mechanical structure, sensing, control, and software behavior.</p>
+              <div class="tags">
+                <span class="tag">mechanical</span>
+                <span class="tag">control</span>
+                <span class="tag">integration</span>
+              </div>
+            </div>
+          </div>
+          <span class="rule-line" data-rule="=">++</span>
+        </article>
+
+        <article class="ascii-box project-card" id="electrical">
+          <span class="rule-line" data-rule="=">++</span>
+          <div class="box-content">
+            <div class="image-slot">
+              <img alt="Placeholder image for digital logic work" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 420'%3E%3Crect width='900' height='420' fill='%23f7f0df'/%3E%3Crect x='330' y='100' width='240' height='220' fill='none' stroke='%23111111' stroke-width='9'/%3E%3Cline x1='120' y1='145' x2='330' y2='145' stroke='%23111111' stroke-width='9'/%3E%3Cline x1='120' y1='210' x2='330' y2='210' stroke='%23111111' stroke-width='9'/%3E%3Cline x1='120' y1='275' x2='330' y2='275' stroke='%23111111' stroke-width='9'/%3E%3Cline x1='570' y1='210' x2='770' y2='210' stroke='%23111111' stroke-width='9'/%3E%3Ccircle cx='790' cy='210' r='22' fill='none' stroke='%23111111' stroke-width='9'/%3E%3C/svg%3E" />
+            </div>
+            <div class="project-body">
+              <h3>Embedded / Logic Work</h3>
+              <p>Digital logic, finite-state machines, timing behavior, and embedded-adjacent implementation work.</p>
+              <div class="tags">
+                <span class="tag">electrical</span>
+                <span class="tag">fsm</span>
+                <span class="tag">embedded</span>
+              </div>
+            </div>
+          </div>
+          <span class="rule-line" data-rule="=">++</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="integrated" class="section">
+      <h2 class="section-title">
+        <span class="rule-segment" data-rule="-"></span>
+        <span>Integrated</span>
+        <span class="rule-segment" data-rule="-"></span>
+      </h2>
+      <div class="ascii-box panel">
+        <span class="rule-line" data-rule="=">++</span>
+        <div class="box-content">
+          <p>
+            Placeholder for projects where the real value is system integration: CAD, electronics, code, users, constraints, and deployment all working together.
+          </p>
+        </div>
+        <span class="rule-line" data-rule="=">++</span>
+      </div>
+    </section>
+
+    <section id="resume" class="section">
+      <h2 class="section-title">
+        <span class="rule-segment" data-rule="-"></span>
+        <span>Resume Sets</span>
+        <span class="rule-segment" data-rule="-"></span>
+      </h2>
+      <div class="ascii-box panel">
+        <span class="rule-line" data-rule="=">++</span>
+        <div class="box-content">
+          <ul class="terminal-list">
+            <li>Software / Automation Resume</li>
+            <li>Embedded / Controls Resume</li>
+            <li>Mechanical / CAD Resume</li>
+            <li>Building Systems / Consulting Resume</li>
+          </ul>
+        </div>
+        <span class="rule-line" data-rule="=">++</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page footer">
+    <span class="rule-line" data-rule="=">++</span>
+    <span>© <span id="year"></span> Nathan Peredery</span>
+    <span>ASCII UI / real project media</span>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const topbar = document.querySelector('#topbar');
+    const toggle = document.querySelector('.theme-toggle');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const drawer = document.querySelector('#mobile-drawer');
+    const scrim = document.querySelector('#drawer-scrim');
+    const savedTheme = localStorage.getItem('theme');
+
+    function buildAsciiRules() {
+      document.querySelectorAll('.rule-line, .rule-segment').forEach((el) => {
+        if (el.dataset.built === 'true') return;
+
+        const fillChar = el.dataset.rule || '-';
+        const fill = fillChar.repeat(1200);
+
+        el.textContent = '';
+        const leftCap = document.createElement('span');
+        const lineFill = document.createElement('span');
+        const rightCap = document.createElement('span');
+
+        leftCap.className = 'rule-cap-left';
+        lineFill.className = 'rule-fill';
+        rightCap.className = 'rule-cap-right';
+
+        leftCap.textContent = '+';
+        lineFill.textContent = fill;
+        rightCap.textContent = '+';
+
+        el.append(leftCap, lineFill, rightCap);
+        el.dataset.built = 'true';
+      });
+    }
+
+    function updateTopbarHeight() {
+      const height = Math.ceil(topbar.getBoundingClientRect().height);
+      root.style.setProperty('--topbar-height', height + 'px');
+    }
+
+    function refreshLayout() {
+      updateTopbarHeight();
+    }
+
+    function setToggleLabel() {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      toggle.querySelector('.theme-glyph').textContent = isDark ? '☾' : '☀';
+      toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    function openDrawer() {
+      drawer.hidden = false;
+      scrim.hidden = false;
+      requestAnimationFrame(() => {
+        drawer.classList.add('is-open');
+        scrim.classList.add('is-open');
+      });
+      drawer.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Close navigation menu');
+      menuToggle.querySelector('.menu-glyph').textContent = '×';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      scrim.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      menuToggle.querySelector('.menu-glyph').textContent = '☰';
+      setTimeout(() => {
+        if (!drawer.classList.contains('is-open')) {
+          drawer.hidden = true;
+          scrim.hidden = true;
+        }
+      }, 190);
+    }
+
+    if (savedTheme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    drawer.hidden = true;
+    scrim.hidden = true;
+    setToggleLabel();
+    buildAsciiRules();
+    refreshLayout();
+
+    window.addEventListener('load', refreshLayout);
+    window.addEventListener('resize', () => {
+      refreshLayout();
+      if (!window.matchMedia('(max-width: 760px)').matches) closeDrawer();
+    });
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      setToggleLabel();
+      refreshLayout();
+    });
+
+    menuToggle.addEventListener('click', () => {
+      if (drawer.classList.contains('is-open')) closeDrawer();
+      else openDrawer();
+    });
+
+    scrim.addEventListener('click', closeDrawer);
+    drawer.addEventListener('click', (event) => {
+      if (event.target.closest('a')) closeDrawer();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+    </div>
+  </div>
+</body>
+</html>

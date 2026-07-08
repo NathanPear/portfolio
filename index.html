@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathan Peredery | Engineering Portfolio</title>
+  <meta name="description" content="Nathan Peredery's engineering portfolio, organized as a linked tree and styled after the ASCII mockup." />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport" id="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="./index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Engineering domain navigation">
+            <a class="ascii-button" href="./mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="./electronic.html">Electrical</a>
+            <a class="ascii-button" href="./software.html">Software</a>
+            <a class="ascii-button" href="./integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+        <p class="drawer-title">+-- domains --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="./index.html">Index</a>
+          <a class="ascii-button" href="./mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="./electronic.html">Electrical</a>
+          <a class="ascii-button" href="./software.html">Software</a>
+          <a class="ascii-button" href="./integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="ascii-box">
+            <span class="rule-line" data-rule="="></span>
+            <div class="box-content">
+              <p class="ascii-kicker">
+                <span class="rule-line" data-rule="-"></span>
+                <span>MECHATRONICS / AUTOMATION / SYSTEMS / PRACTICAL BUILDS</span>
+                <span class="rule-line" data-rule="-"></span>
+              </p>
+              <h1>Engineering<br />Portfolio</h1>
+              <p class="subtitle">
+                I build practical systems across mechanical design, electrical logic, software automation, and integrated engineering workflows.
+              </p>
+              <div class="hero-links" aria-label="Landing page shortcuts">
+                <a class="ascii-button" href="#about">About Me</a>
+                <a class="ascii-button" href="#featured">Featured Work</a>
+                <a class="ascii-button" href="#tree">Resume Sets</a>
+              </div>
+            </div>
+            <span class="rule-line" data-rule="="></span>
+          </div>
+        </section>
+
+        <section id="featured" class="section">
+          <h2 class="section-title">
+            <span class="rule-segment" data-rule="-"></span>
+            <span>Featured Projects</span>
+            <span class="rule-segment" data-rule="-"></span>
+          </h2>
+          <div class="featured-grid project-cards" data-project-tag="featured">
+            <!-- PROJECT_CARDS:featured -->
+<a class="ascii-box project-card" href="projects/project-1-automated-medical-document-synthesis.html">
+  <span class="rule-line" data-rule="="></span>
+  <div class="box-content">
+    <div class="project-body">
+      <h3>Automated Medical Document Synthesis</h3>
+      <p>A full-stack web app that turns structured clinic data into consult letters while keeping sensitive data inside the secure environment.</p>
+      <div class="tags"><span class="tag">software</span><span class="tag">digital</span><span class="tag">featured</span></div>
+    </div>
+  </div>
+  <span class="rule-line" data-rule="="></span>
+</a>
+
+<a class="ascii-box project-card" href="projects/project-2-retractable-cane-stabilizer.html">
+  <span class="rule-line" data-rule="="></span>
+  <div class="box-content">
+    <div class="panel-image"><img alt="Retractable Cane Stabilizer banner" src="assets/images/Physical/3ecc860f73d48631f440be89dd29b0b1.jpg" /></div>
+    <div class="project-body">
+      <h3>Retractable Cane Stabilizer</h3>
+      <p>A 3D-printed attachment that keeps a cane upright without changing normal walking ergonomics.</p>
+      <div class="tags"><span class="tag">mechanical</span><span class="tag">physical</span><span class="tag">featured</span></div>
+    </div>
+  </div>
+  <span class="rule-line" data-rule="="></span>
+</a>
+
+<a class="ascii-box project-card" href="projects/project-3-student-number-fsm.html">
+  <span class="rule-line" data-rule="="></span>
+  <div class="box-content">
+    <div class="project-body">
+      <h3>Student Number Finite State Machine</h3>
+      <p>A 4-bit FSM that drives a 7-segment display through a repeated digit sequence using JK flip-flops and NAND logic.</p>
+      <div class="tags"><span class="tag">electrical</span><span class="tag">electronic</span><span class="tag">featured</span></div>
+    </div>
+  </div>
+  <span class="rule-line" data-rule="="></span>
+</a>
+<!-- /PROJECT_CARDS -->
+          </div>
+        </section>
+
+        <section id="about" class="section">
+          <h2 class="section-title">
+            <span class="rule-segment" data-rule="-"></span>
+            <span>About Me</span>
+            <span class="rule-segment" data-rule="-"></span>
+          </h2>
+          <div class="about-layout">
+            <div class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p>
+                  My path to Mechatronics began with a sheet of cardboard and a roll of tape. Whether it was building a custom iPad holder for a treadmill or a tactical doorstop, I have always been driven by practical solutions to everyday problems.
+                </p>
+                <p>
+                  Growing up in a household centered around Computer Science gave me an early feel for programming logic. Later, Autodesk Inventor and 3D printing in high school showed me that ideas could become real objects.
+                </p>
+                <p>
+                  Since then, I have focused on projects that sit between mechanical design, electronics, and software. I am especially interested in work where constraints are real and the system has to behave reliably.
+                </p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <ul class="terminal-list">
+                  <li>Current focus: automation, CAD, embedded systems, engineering tools</li>
+                  <li>Tools: SolidWorks, Python, C/C++, JavaScript, Git, Multisim</li>
+                  <li>Looking for: co-op / internship / project-based engineering work</li>
+                  <li>Signal: practical builds with real constraints</li>
+                </ul>
+                <div class="quick-links">
+                  <a class="ascii-button" href="mailto:perederynathan@gmail.com">Email</a>
+                  <a class="ascii-button" href="https://www.linkedin.com/in/nathan-peredery-7b8830331/" target="_blank" rel="noreferrer">LinkedIn</a>
+                  <a class="ascii-button" href="https://github.com/NathanPear" target="_blank" rel="noreferrer">GitHub</a>
+                  <a class="ascii-button" href="https://leetcode.com/u/perederynathan/" target="_blank" rel="noreferrer">LeetCode</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section id="tree" class="section">
+          <h2 class="section-title">
+            <span class="rule-segment" data-rule="-"></span>
+            <span>Resume Sets</span>
+            <span class="rule-segment" data-rule="-"></span>
+          </h2>
+          <div class="ascii-box panel">
+            <span class="rule-line" data-rule="="></span>
+            <div class="box-content">
+              <ul class="terminal-list">
+                <li>Software / Automation branch - web app and workflow tools</li>
+                <li>Mechanical / CAD branch - mechanisms, tolerances, and physical design</li>
+                <li>Electrical / Logic branch - finite state machines and synchronous control</li>
+                <li>Integrated branch - robotics, routing, and transport systems</li>
+              </ul>
+            </div>
+            <span class="rule-line" data-rule="="></span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>ASCII UI / real project media</span>
+      </footer>
+    </div>
+  </div>
+  <script src="assets/site.js"></script>
+</body>
+</html>

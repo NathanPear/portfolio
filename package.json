@@ -1,0 +1,8 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "node scripts/build-project-cards.js"
+  }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "automated-medical-document-synthesis",
+    "title": "Automated Medical Document Synthesis",
+    "summary": "A full-stack web app that turns structured clinic data into consult letters while keeping sensitive data inside the secure environment.",
+    "tags": ["software", "digital", "featured"],
+    "image": "",
+    "url": "projects/project-1-automated-medical-document-synthesis.html",
+    "order": 1000
+  },
+  {
+    "slug": "retractable-cane-stabilizer",
+    "title": "Retractable Cane Stabilizer",
+    "summary": "A 3D-printed attachment that keeps a cane upright without changing normal walking ergonomics.",
+    "tags": ["mechanical", "physical", "featured"],
+    "image": "assets/images/Physical/3ecc860f73d48631f440be89dd29b0b1.jpg",
+    "url": "projects/project-2-retractable-cane-stabilizer.html",
+    "order": 2000
+  },
+  {
+    "slug": "student-number-fsm",
+    "title": "Student Number Finite State Machine",
+    "summary": "A 4-bit FSM that drives a 7-segment display through a repeated digit sequence using JK flip-flops and NAND logic.",
+    "tags": ["electrical", "electronic", "featured"],
+    "image": "",
+    "url": "projects/project-3-student-number-fsm.html",
+    "order": 3000
+  },
+  {
+    "slug": "airport-sorting-system",
+    "title": "Airport Sorting System",
+    "summary": "A simulated luggage transport and sorting system combining Python routing, a robotic arm, and a custom bridge mechanism.",
+    "tags": ["integrated"],
+    "image": "assets/images/Integrated/978dd1cac5c74303804e6fb7a585dc6c.jpg",
+    "url": "projects/project-4-airport-sorting-system.html",
+    "order": 4000
+  },
+  {
+    "slug": "passive-geometric-cable-holder",
+    "title": "Passive Geometric Cable Holder",
+    "summary": "A static rectangular spiral cable holder securing wires through natural geometry and rigidity without material fatigue.",
+    "tags": ["mechanical", "physical"],
+    "image": "",
+    "url": "projects/project-5-passive-geometric-cable-holder.html",
+    "order": 5000
+  },
+  {
+    "slug": "portable-pocket-cane-holder",
+    "title": "Portable Pocket Cane Holder",
+    "summary": "A collapsible mobility-aid C-frame table clamp with a variable fulcrum and detent locking system.",
+    "tags": ["mechanical", "physical"],
+    "image": "assets/images/Physical/3ddf2c0745ec73c3b23fb40f1ec4e2c6.jpg",
+    "url": "projects/project-6-portable-pocket-cane-holder.html",
+    "order": 6000
+  },
+  {
+    "slug": "nutcracker",
+    "title": "Nutcracker",
+    "summary": "A custom mechanical tool designed to securely hold hazelnuts in place for easy breaking.",
+    "tags": ["mechanical", "physical"],
+    "image": "assets/images/Physical/f81a6bd11f0306e9f7b3ebd525ea7195.jpg",
+    "url": "projects/project-7-nutcracker.html",
+    "order": 7000
+  },
+  {
+    "slug": "cabinet-design",
+    "title": "Cabinet Design",
+    "summary": "A parametric cabinet assembly design prepared in Autodesk Inventor.",
+    "tags": ["mechanical", "physical"],
+    "image": "assets/images/Physical/13e97be29b1e9eab6f474baf0e06a2a0.jpg",
+    "url": "projects/project-8-cabinet-design.html",
+    "order": 8000
+  },
+  {
+    "slug": "compliant-table-cane-holder",
+    "title": "Compliant Table Cane Holder",
+    "summary": "A table-edge clip utilizing compliant mechanism design to secure a cane.",
+    "tags": ["mechanical", "physical"],
+    "image": "assets/images/Physical/2b4f144d575bd64c41b1545bb41846fe.jpg",
+    "url": "projects/project-9-compliant-table-cane-holder.html",
+    "order": 9000
+  },
+  {
+    "slug": "wireless-charging-cradle",
+    "title": "Wireless Charging Cradle",
+    "summary": "A custom wireless charging cradle optimized for specific phone and charger geometry.",
+    "tags": ["mechanical", "physical"],
+    "image": "assets/images/Physical/3e5e02929023e3f1acb3a317b3ec28e4.jpg",
+    "url": "projects/project-10-wireless-charging-cradle.html",
+    "order": 10000
+  },
+  {
+    "slug": "dry-erase-marker-holder",
+    "title": "Dry Erase Marker Holder",
+    "summary": "A simple 3D-printed storage and organizer tray for dry erase markers.",
+    "tags": ["mechanical", "physical"],
+    "image": "assets/images/Physical/5956b5b26a7bf9c803918184296e4b65.jpg",
+    "url": "projects/project-11-dry-erase-marker-holder.html",
+    "order": 11000
+  }
+]

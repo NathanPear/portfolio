@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portable Pocket Cane Holder | Project 6 | Nathan Peredery</title>
+  <meta name="description" content="Project 6 case study: a collapsible pocket cane holder featuring a detent locking mechanism and sliding fulcrum." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Engineering domain navigation">
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electrical</a>
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+        <p class="drawer-title">+-- domains --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electrical</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 6 / MECHANICAL</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Portable Pocket Cane Holder</h1>
+                <p class="subtitle">A collapsible mobility-aid C-frame table clamp with a variable fulcrum and detent locking system.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Portable Pocket Cane Holder device" src="../assets/images/Physical/3ddf2c0745ec73c3b23fb40f1ec4e2c6.jpg" /></div>
+                <ul class="terminal-list">
+                  <li>Role: mechanism design, kinematics, and prototyping</li>
+                  <li>Focus: collapsible structures and adjustable force</li>
+                  <li>Constraint: portability and table thickness variation</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>Mobility aid users often lack a place to secure their canes at tables or counters, leading to canes falling or creating tripping hazards. Existing holders are either permanent fixtures or too bulky for portability.</p>
+                <p>The design challenge was to create a product capable of securing a cane to a table while remaining small enough to be portable, and easy enough to use to be practical.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>Collapsible design to fit inside a pocket</li>
+                  <li>Secure clamping on table edges of varying thicknesses</li>
+                  <li>Easy operation with limited hand strength</li>
+                  <li>Maintain rigid configuration under clamping tension</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li>Kinematic Folding Design: three-member frame with free-swinging hinges that collapse into a nested plane</li>
+                  <li>Detent Locking Mechanism: custom orthogonal rods and rack lock with a spring-loaded release button</li>
+                  <li>Variable-Length Cantilever Spring: sliding fulcrum adjusts effective spring length of the leaf member</li>
+                  <li>Adjustable clamping force tuned for different counter thicknesses</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>This design combines folding kinematic links with structural spring logic. By shifting the pivot point of the leaf-spring arm, it allows the user to tune the mechanical advantage and spring stiffness to match different tables.</p>
+                <p>This project is legible to reviewers interested in collapsible mechanisms, mobility aids, product engineering, and functional prototypes.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The resulting portable cane holder folds flat for pocket transport and clamps securely onto table edges between 0.5" and 2.0" thick.</p>
+                <p>The combination of the detent lock and leaf spring provides a stable clamp that prevents cane falls without adding unnecessary bulk.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>Folding kinematics must handle both force transmission and space efficiency</li>
+                  <li>Spring stiffness can be adjustably tuned through geometric constraints rather than material changes</li>
+                  <li>Hinged linkages must lock reliably to prevent collapse under load</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../mechanical.html">Back to mechanical</a>
+                  <a class="ascii-button" href="../index.html#featured">View featured projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Additional Project Media</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="ascii-box panel">
+            <span class="rule-line" data-rule="="></span>
+            <div class="box-content">
+              <div class="media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 6px;">
+                <div class="panel-image"><img alt="Cane holder clamped view" src="../assets/images/Physical/c20fbe53970dfc56a8cf6a89e0ecc597.jpg" /></div>
+                <div class="panel-image"><img alt="Cane holder detailed linkage view" src="../assets/images/Physical/2b4f144d575bd64c41b1545bb41846fe.jpg" /></div>
+              </div>
+            </div>
+            <span class="rule-line" data-rule="="></span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 6</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
