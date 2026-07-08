@@ -304,7 +304,29 @@ h1 {
 .panel-image img {
   width: 100%;
   height: 100%;
-  filter: grayscale(1) contrast(1.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.panel-image:hover img {
+  transform: scale(1.03);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .terminal-list,
@@ -467,6 +489,24 @@ h1 {
   font-weight: 600;
 }
 .tree-item strong::before { content: "./"; color: var(--muted); }
+
+/* ── Resume embed ── */
+.resume-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 8.5 / 11;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+.resume-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 .footer {
   margin: 54px auto 28px;

@@ -6,25 +6,25 @@
     "tags": ["software", "digital", "featured"],
     "image": "",
     "url": "projects/project-1-automated-medical-document-synthesis.html",
-    "order": 1000
+    "order": 6000
   },
   {
     "slug": "retractable-cane-stabilizer",
     "title": "Retractable Cane Stabilizer",
     "summary": "A 3D-printed attachment that keeps a cane upright without changing normal walking ergonomics.",
     "tags": ["mechanical", "physical", "featured"],
-    "image": "assets/images/Physical/3ecc860f73d48631f440be89dd29b0b1.jpg",
+    "image": "assets/images/Physical/retractable-cane-holder-open-main.jpg",
     "url": "projects/project-2-retractable-cane-stabilizer.html",
-    "order": 2000
+    "order": 3000
   },
   {
     "slug": "student-number-fsm",
     "title": "Student Number Finite State Machine",
     "summary": "A 4-bit FSM that drives a 7-segment display through a repeated digit sequence using JK flip-flops and NAND logic.",
     "tags": ["electrical", "electronic", "featured"],
-    "image": "",
+    "image": "assets/images/Physical/fsm-main-picture.png",
     "url": "projects/project-3-student-number-fsm.html",
-    "order": 3000
+    "order": 4000
   },
   {
     "slug": "airport-sorting-system",
@@ -33,25 +33,25 @@
     "tags": ["integrated"],
     "image": "assets/images/Integrated/978dd1cac5c74303804e6fb7a585dc6c.jpg",
     "url": "projects/project-4-airport-sorting-system.html",
-    "order": 4000
+    "order": 7000
   },
   {
     "slug": "passive-geometric-cable-holder",
     "title": "Passive Geometric Cable Holder",
     "summary": "A static rectangular spiral cable holder securing wires through natural geometry and rigidity without material fatigue.",
     "tags": ["mechanical", "physical"],
-    "image": "",
+    "image": "assets/images/Physical/geometry-cable-holder.jpg",
     "url": "projects/project-5-passive-geometric-cable-holder.html",
-    "order": 5000
+    "order": 3300
   },
   {
     "slug": "portable-pocket-cane-holder",
     "title": "Portable Pocket Cane Holder",
     "summary": "A collapsible mobility-aid C-frame table clamp with a variable fulcrum and detent locking system.",
     "tags": ["mechanical", "physical"],
-    "image": "assets/images/Physical/3ddf2c0745ec73c3b23fb40f1ec4e2c6.jpg",
+    "image": "assets/images/Physical/pocket-cane-holder-open-main.jpg",
     "url": "projects/project-6-portable-pocket-cane-holder.html",
-    "order": 6000
+    "order": 3100
   },
   {
     "slug": "nutcracker",
@@ -60,7 +60,7 @@
     "tags": ["mechanical", "physical"],
     "image": "assets/images/Physical/f81a6bd11f0306e9f7b3ebd525ea7195.jpg",
     "url": "projects/project-7-nutcracker.html",
-    "order": 7000
+    "order": 3800
   },
   {
     "slug": "cabinet-design",
@@ -69,16 +69,16 @@
     "tags": ["mechanical", "physical"],
     "image": "assets/images/Physical/13e97be29b1e9eab6f474baf0e06a2a0.jpg",
     "url": "projects/project-8-cabinet-design.html",
-    "order": 8000
+    "order": 3500
   },
   {
     "slug": "compliant-table-cane-holder",
     "title": "Compliant Table Cane Holder",
     "summary": "A table-edge clip utilizing compliant mechanism design to secure a cane.",
     "tags": ["mechanical", "physical"],
-    "image": "assets/images/Physical/2b4f144d575bd64c41b1545bb41846fe.jpg",
+    "image": "assets/images/Physical/static-cane-holder.jpg",
     "url": "projects/project-9-compliant-table-cane-holder.html",
-    "order": 9000
+    "order": 3600
   },
   {
     "slug": "wireless-charging-cradle",
@@ -87,7 +87,7 @@
     "tags": ["mechanical", "physical"],
     "image": "assets/images/Physical/3e5e02929023e3f1acb3a317b3ec28e4.jpg",
     "url": "projects/project-10-wireless-charging-cradle.html",
-    "order": 10000
+    "order": 3400
   },
   {
     "slug": "dry-erase-marker-holder",
@@ -96,43 +96,43 @@
     "tags": ["mechanical", "physical"],
     "image": "assets/images/Physical/5956b5b26a7bf9c803918184296e4b65.jpg",
     "url": "projects/project-11-dry-erase-marker-holder.html",
-    "order": 11000
+    "order": 3700
   },
   {
     "slug": "agentic-automation-infrastructure",
     "title": "Agentic Automation Infrastructure",
     "summary": "A self-hosted agentic automation environment built with Docker Compose, custom model routing, and MCP integrations to run local and cloud-based AI workflows.",
-    "tags": ["software", "integrated", "featured"],
-    "image": "",
+    "tags": ["software", "featured"],
+    "image": "assets/images/Integrated/hermes.png",
     "url": "projects/project-12-agentic-automation-infrastructure.html",
-    "order": 12000
+    "order": 5000
   },
   {
     "slug": "portfolio-website",
     "title": "Static ASCII Portfolio Website",
     "summary": "A static, ASCII-art inspired engineering portfolio generated from project metadata, optimized for GitHub Pages with responsive, themeable design.",
     "tags": ["software", "digital"],
-    "image": "",
+    "image": "assets/images/Digital/portfolio-website.png",
     "url": "projects/project-13-portfolio-website.html",
-    "order": 13000
+    "order": 8000
   },
   {
     "slug": "leadme",
     "title": "Leadme",
     "summary": "A local-first lead discovery and outreach drafting service built with Docker Compose, SQLite, and schema-validated JSON contracts.",
-    "tags": ["software", "integrated", "featured"],
+    "tags": ["software", "featured"],
     "image": "",
     "url": "projects/project-14-leadme.html",
-    "order": 14000
+    "order": 2000
   },
   {
     "slug": "ultrasonic-room-scanner",
     "title": "Ultrasonic Room Scanner",
     "summary": "A stepper-motor-driven ultrasonic mapper that sweeps a room, filters readings, and exports angle-distance data for 2D shape reconstruction.",
     "tags": ["electronic", "integrated", "featured"],
-    "image": "assets/images/project-15.svg",
+    "image": "assets/images/Integrated/ultrasonic-shape-mapper.png",
     "url": "projects/project-15-ultrasonic-room-scanner.html",
-    "order": 15000
+    "order": 1000
   },
   {
     "slug": "twin-threaded-paper-towel-holder",
@@ -141,6 +141,51 @@
     "tags": ["mechanical", "physical"],
     "image": "assets/images/Physical/paper-towel-holder-assembled.png",
     "url": "projects/project-16-twin-threaded-paper-towel-holder.html",
-    "order": 16000
+    "order": 3200
+  },
+  {
+    "slug": "resume-master",
+    "title": "Master Resume",
+    "summary": "Comprehensive resume covering mechatronics, software, mechanical, electronics, and embedded systems experience.",
+    "tags": ["resume"],
+    "image": "",
+    "url": "projects/resume-master.html",
+    "order": 9000
+  },
+  {
+    "slug": "resume-software",
+    "title": "Software Resume",
+    "summary": "Resume tailored for software engineering, automation, and web application development roles.",
+    "tags": ["resume"],
+    "image": "",
+    "url": "projects/resume-software.html",
+    "order": 9100
+  },
+  {
+    "slug": "resume-mechanical",
+    "title": "Mechanical Resume",
+    "summary": "Resume tailored for mechanical engineering, CAD, and physical design roles.",
+    "tags": ["resume"],
+    "image": "",
+    "url": "projects/resume-mechanical.html",
+    "order": 9200
+  },
+  {
+    "slug": "resume-electronics",
+    "title": "Electronics Resume",
+    "summary": "Resume tailored for electrical engineering, circuit design, and digital logic roles.",
+    "tags": ["resume"],
+    "image": "",
+    "url": "projects/resume-electronics.html",
+    "order": 9300
+  },
+  {
+    "slug": "resume-embedded-systems",
+    "title": "Embedded Systems Resume",
+    "summary": "Resume tailored for embedded systems, firmware, and microcontroller-based engineering roles.",
+    "tags": ["resume"],
+    "image": "",
+    "url": "projects/resume-embedded-systems.html",
+    "order": 9400
   }
 ]

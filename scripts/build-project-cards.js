@@ -6,6 +6,7 @@ const dataPath = path.join(repoRoot, 'data', 'projects.json');
 
 const pageConfigs = [
   { file: 'index.html', tag: 'featured', marker: 'featured' },
+  { file: 'index.html', tag: 'resume', marker: 'resume' },
   { file: 'software.html', tag: 'software', marker: 'software' },
   { file: 'mechanical.html', tag: 'mechanical', marker: 'mechanical' },
   { file: 'electronic.html', tag: 'electronic', marker: 'electronic' },
