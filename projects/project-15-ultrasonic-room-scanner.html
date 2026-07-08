@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultrasonic Room Scanner | Project 15 | Nathan Peredery</title>
+  <meta name="description" content="Project 15 case study: a stepper-motor ultrasonic scanner that maps room geometry for 2D reconstruction." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Primary navigation">
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electronic</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+        <p class="drawer-title">+-- tree --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electronic</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 15 / ELECTRONIC</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Ultrasonic Room Scanner</h1>
+                <p class="subtitle">A stepper-motor-driven ultrasonic scanner that measures the geometry around it by sweeping a distance sensor through a full rotation and exporting the readings for 2D reconstruction.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Ultrasonic room scanner illustration" src="../assets/images/project-15.svg" /></div>
+                <ul class="terminal-list">
+                  <li>Role: sensor control, motion control, and data output</li>
+                  <li>Focus: room mapping through angular distance sampling</li>
+                  <li>Constraint: keep the sensor aligned and readings usable</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>The system was built to measure the shape of nearby interior space by scanning distance readings as the sensor rotated through a full sweep.</p>
+                <p>That makes it a compact sensing-and-control project: the mechanism has to move reliably, the sensor has to return meaningful data, and the output has to be easy to use later.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>Use an ultrasonic sensor to read distance</li>
+                  <li>Rotate the sensor with a stepper motor</li>
+                  <li>Support manual clockwise and counterclockwise alignment</li>
+                  <li>Export angle-distance data in a MATLAB-ready format</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li>A stepper-driven sweep routine that captures geometry over 360 degrees</li>
+                  <li>An idle mode for manual sensor alignment using two buttons</li>
+                  <li>Filtering logic that fills obvious invalid or inconsistent readings</li>
+                  <li>Serial output formatted for downstream shape reconstruction in MATLAB</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>This project lives where embedded systems, sensing, and data visualization meet. The hardware has to move smoothly, the sensor data has to be trustworthy, and the output has to be structured enough for analysis.</p>
+                <p>That makes it easy to understand from either a controls viewpoint or a software-and-data viewpoint, which is useful in a cross-disciplinary portfolio.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The final system could sweep a room, record angle and distance samples, filter the measurements, and output data ready for 2D shape reconstruction.</p>
+                <p>It also supported manual alignment, which made the scanner easier to position before a run.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>Motion control and sensing are more useful when their data is immediately usable</li>
+                  <li>Simple filtering can make raw sensor data much more trustworthy</li>
+                  <li>Clear output formats matter when a project feeds into another toolchain</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../electronic.html">Back to electronic</a>
+                  <a class="ascii-button" href="../integrated.html">View integrated projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 15</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

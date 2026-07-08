@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadme | Project 14 | Nathan Peredery</title>
+  <meta name="description" content="Project 14 case study: a local-first lead discovery and outreach drafting service built with Docker, SQLite, and schema-validated JSON contracts." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Engineering domain navigation">
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electrical</a>
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+        <p class="drawer-title">+-- domains --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electrical</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 14 / SOFTWARE / INTEGRATED</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Leadme</h1>
+                <p class="subtitle">A local-first, queue-driven lead discovery and outreach drafting service built with SQLite, Docker, and schema-validated JSON contracts.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Leadme illustration" data-art="leadme" /></div>
+                <ul class="terminal-list">
+                  <li>Role: backend service design and workflow orchestration</li>
+                  <li>Focus: serial queue workers and structured data validation</li>
+                  <li>Constraint: local-first execution and strict prompt contracts</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>Nathan needed an automated, deterministic way to discover company leads, normalize profiles, enrich contact metadata, and draft outreach emails tailored to local mechatronics and automation roles near Hamilton, Ontario.</p>
+                <p>Rather than relying on manual copy-pasting or complex cloud subscriptions, the goal was to build a local operational service that runs reliably on a workstation or NAS-backed Docker stack.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>Local-first hosting using Docker Compose, SQLite, and local YAML configuration</li>
+                  <li>Strict serial queue worker enqueuing exactly one job at a time to isolate state transitions</li>
+                  <li>JSON-only prompt contracts with strict schema validation; no hidden agentic tool loops inside Leadme</li>
+                  <li>Draft-only outreach (no automated sending in version 1 to keep a human-in-the-loop validation barrier)</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li><strong>Six-Step Serial Queue:</strong> Designed a structured pipeline: <em>Fisher</em> (discovery), <em>Librarian</em> (normalization), <em>Researcher</em> (enrichment), <em>Examiner</em> (fit check), <em>Writer</em> (outreach drafting), and <em>Critic</em> (review).</li>
+                  <li><strong>Hermes OpenAI-Compatible Gateway:</strong> Standardized client interfaces speaking to local model runtimes, validating every JSON response against strict JSON schemas before committing mutations.</li>
+                  <li><strong>Relational SQLite Store:</strong> Engineered database structures tracking lead status, normalized company info, critic notes, and Gmail draft states.</li>
+                  <li><strong>Operator Dashboard:</strong> Lightweight HTTP API and operator dashboard to modify config settings, settings YAML, role prompt files, and inspect active queues.</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>Leadme bridges software design patterns with systems engineering principles. The pipeline behaves similarly to mechatronic feedback loops: data inputs are verified against strict schema boundaries (sensor thresholds) before the system updates database state or enqueues downstream tasks.</p>
+                <p>By avoiding unpredictable agentic loops and constraining the runtime to a serial, single-worker database queue, Leadme shows how software workflows can be engineered with the same predictability and fail-safe boundaries expected of physical hardware.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The resulting service runs locally on Nathan's workstation, pulling companies, organizing database leads, and staging tailored email outreach drafts. Integration tests verify that enqueued jobs advance smoothly and tracking states update correctly.</p>
+                <p>The system passes its full smoke test suite (including <code>test_health_and_fisher_enqueue</code> and <code>test_pipeline_runs_against_fake_endpoint</code>), demonstrating production-grade reliability on simple workstation hardware.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>Serial queues keep multi-step workflow pipelines predictable and simple to debug</li>
+                  <li>Strict schema boundaries at every step prevent prompt leakage and bad model data from corrupting the store</li>
+                  <li>Separating prompt files and context markdown from code files makes configuration simple for operators</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../software.html">Back to software</a>
+                  <a class="ascii-button" href="../integrated.html">Back to integrated</a>
+                  <a class="ascii-button" href="../index.html#featured">View featured projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 14</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

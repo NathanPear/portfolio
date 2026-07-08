@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic Automation Infrastructure | Project 12 | Nathan Peredery</title>
+  <meta name="description" content="Project 12 case study: a self-hosted agentic automation environment with Docker, custom model routing, and MCP integrations." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Engineering domain navigation">
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electrical</a>
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+        <p class="drawer-title">+-- domains --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electrical</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 12 / SOFTWARE / INTEGRATED</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Agentic Automation Infrastructure</h1>
+                <p class="subtitle">A self-hosted, multi-agent environment orchestrating model-routing, containerized services, and structured automation workflows.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Agentic automation infrastructure illustration" data-art="infra" /></div>
+                <ul class="terminal-list">
+                  <li>Role: independent systems integration and DevOps</li>
+                  <li>Focus: agent infrastructure and container orchestration</li>
+                  <li>Constraint: resource-constrained hardware and strict privacy limits</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>Moving from basic AI chat interactions to dependable local-first automation requires solving deployment, networking, token management, and reliable model fallbacks.</p>
+                <p>Running multi-agent systems on resource-constrained private hardware demands robust orchestration around models to ensure service reliability, data sovereignty, and secure tool access.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>Deploy a multi-service agent stack securely on a local host</li>
+                  <li>Implement model routers handling fallbacks, caps, and timeouts</li>
+                  <li>Integrate tools via profile-aware gateways separating read/write bounds</li>
+                  <li>Support workflow automation with deterministic validation and state boundaries</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li><strong>Docker Stacks:</strong> Separated containers by agent roles (Anna, Nightingale, Router) using Compose volume mappings and network isolation.</li>
+                  <li><strong>Local Policy Router:</strong> Smart model ladders, fallback policies, context cap enforcement, and YAML-defined configuration.</li>
+                  <li><strong>lazy-mcp Gateway:</strong> Dispatch routing and credential boundaries restricting tool exposure based on active profile scopes.</li>
+                  <li><strong>A2A System:</strong> A file-backed, deterministic agent-to-agent (A2A) message relay system with deduplication keys, TTL, and status transitions.</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>This project integrates systems engineering, devops, and artificial intelligence into a coherent, self-hosted operational layer. A reviewer from a robotics or mechatronics background can easily see the parallel: the agent represents the controller, the MCP acts as the input/output bus, and containerized services are the physical actuators.</p>
+                <p>It also demonstrates strong systems-integration discipline: managing network boundaries, handling auth lifecycles, and treating LLMs as raw compute modules wrapped in validation code.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The final system successfully routes requests dynamically between local and cloud models while exposing secure, profile-aware MCP toolsets to the agent harness.</p>
+                <p>Security is maintained by restricting outgoing operations to intermediate, human-in-the-loop validation states, eliminating the risk of unreviewed autonomous actions.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>System reliability is built around the model, not inside it, via schemas</li>
+                  <li>Local model hosting (llama.cpp) requires careful context and speed tuning</li>
+                  <li>Restricting critical actions to human-in-the-loop staging states ensures safe autonomous runs</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../software.html">Back to software</a>
+                  <a class="ascii-button" href="../integrated.html">Back to integrated</a>
+                  <a class="ascii-button" href="../index.html#featured">View featured projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 12</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

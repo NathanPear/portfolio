@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twin-Threaded Paper Towel Holder | Project 16 | Nathan Peredery</title>
+  <meta name="description" content="Project 16 case study: a table-mounted paper towel holder with threaded brackets and a removable 3D-printed dowel bolt." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Primary navigation">
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electronic</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+        <p class="drawer-title">+-- tree --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electronic</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 16 / MECHANICAL</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Twin-Threaded Paper Towel Holder</h1>
+                <p class="subtitle">A SolidWorks table-mounted paper towel holder that uses twin threaded brackets and removable 3D-printed bolts to create a smooth towel dowel.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Paper towel holder assembly render" src="../assets/images/Physical/paper-towel-holder-assembled.png" /></div>
+                <ul class="terminal-list">
+                  <li>Role: CAD design and prototyping</li>
+                  <li>Focus: threaded mounting, serviceability, and stiffness</li>
+                  <li>Constraint: keep the towel bearing surface smooth</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>The design goal was to make a paper towel holder that could mount to a table securely, be easy to remove by hand, and present a smooth resting surface for the roll itself.</p>
+                <p>That meant the project had to solve both attachment and usability: strong enough to clamp in place, but simple enough to service without tools.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>Twin threaded brackets screwed into a table</li>
+                  <li>Large 3D-printed bolt threaded into the bracket</li>
+                  <li>Threads only near the bolt head so the towel rests on a smooth minor diameter</li>
+                  <li>One bolt can be unthreaded by hand to remove the towel roll</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li>A pair of threaded brackets that fasten to the table edge</li>
+                  <li>A large 3D-printed bolt that acts as the removable dowel support</li>
+                  <li>A ribbed structural section instead of a solid mass to save material</li>
+                  <li>Countersunk holes so the wood screws sit flush</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>This is a good mechanical portfolio piece because it blends design intent, manufacturability, and user interaction. The thread geometry matters, but so does the service experience when someone removes the roll by hand.</p>
+                <p>The ribbed structure and countersunk mounting details also show that the design was made with material efficiency and assembly quality in mind, not just shape.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The finished design mounts to a table with twin threaded brackets, supports the paper towel roll on a smooth cylindrical surface, and can be serviced by unthreading one bolt by hand.</p>
+                <p>That gave the project a clean balance of rigidity, usability, and material efficiency.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>Small details like thread placement can improve everyday usability</li>
+                  <li>Ribs are often better than solid material when stiffness is the goal</li>
+                  <li>Flush mounting hardware makes the final assembly feel more polished</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../mechanical.html">Back to mechanical</a>
+                  <a class="ascii-button" href="../index.html#featured">View featured projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Detail Views</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Exploded paper towel holder render" src="../assets/images/Physical/paper-towel-holder-blowup.png" /></div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Why it matters</div>
+                <p>The exploded view makes the design logic visible: the bracket carries the load, the bolt supplies the dowel, and the threads are positioned only where they need to be.</p>
+                <p>That separation of functions is exactly the kind of design reasoning a mechanical reviewer can assess quickly in a portfolio page.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 16</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

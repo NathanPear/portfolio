@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Static ASCII Portfolio Website | Project 13 | Nathan Peredery</title>
+  <meta name="description" content="Project 13 case study: a static, JSON-driven engineering portfolio website optimized for GitHub Pages." />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <div class="site-viewport">
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <div class="page topbar-inner">
+          <a class="wordmark" href="../index.html">Nathan Peredery</a>
+          <nav class="nav" aria-label="Engineering domain navigation">
+            <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+            <a class="ascii-button" href="../electronic.html">Electrical</a>
+            <a class="ascii-button" href="../software.html">Software</a>
+            <a class="ascii-button" href="../integrated.html">Integrated</a>
+          </nav>
+          <div class="toolbar-controls">
+            <button class="ascii-button menu-toggle" type="button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Open navigation menu"><span class="glyph">&#9776;</span></button>
+            <button class="ascii-button theme-toggle" type="button" aria-label="Toggle dark mode"><span class="glyph">&#9728;</span></button>
+          </div>
+        </div>
+        <div class="viewport-rule"><span class="rule-line" data-rule="="></span></div>
+      </header>
+
+      <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+      <aside class="side-drawer" id="mobile-drawer" aria-label="Mobile engineering domain navigation" aria-hidden="true">
+        <p class="drawer-title">+-- domains --+</p>
+        <nav class="drawer-nav">
+          <a class="ascii-button" href="../index.html">Index</a>
+          <a class="ascii-button" href="../mechanical.html">Mechanical</a>
+          <a class="ascii-button" href="../electronic.html">Electrical</a>
+          <a class="ascii-button" href="../software.html">Software</a>
+          <a class="ascii-button" href="../integrated.html">Integrated</a>
+        </nav>
+      </aside>
+
+      <main class="page">
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="ascii-box">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <p class="ascii-kicker">
+                  <span class="rule-line" data-rule="-"></span>
+                  <span>PROJECT 13 / SOFTWARE / DIGITAL</span>
+                  <span class="rule-line" data-rule="-"></span>
+                </p>
+                <h1>Static ASCII Portfolio Website</h1>
+                <p class="subtitle">A zero-dependency, JSON-driven engineering portfolio designed with a retro ASCII-art terminal aesthetic.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </div>
+
+            <aside class="ascii-box hero-aside">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="panel-image"><img alt="Portfolio illustration" data-art="portfolio" /></div>
+                <ul class="terminal-list">
+                  <li>Role: system design and front-end engineering</li>
+                  <li>Focus: static build automation and performance optimization</li>
+                  <li>Constraint: zero-runtime backend and lightweight client-side footprint</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Project Details</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Problem and Context</div>
+                <p>Modern portfolios often require complex web frameworks, hydration overhead, and heavy runtimes, leading to slow loading times, maintenance headaches, and poor longevity.</p>
+                <p>For a multidisciplinary engineering portfolio, the goal was to design a robust, lightning-fast, and visually distinct presentation that emphasizes technical clarity and structured documentation.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Scope and Constraints</div>
+                <ul class="inline-list">
+                  <li>No runtime backend (fully static hosting compatible with GitHub Pages)</li>
+                  <li>Unified retro terminal ASCII design language across all viewports</li>
+                  <li>Automated compiler scripts to synchronize portfolio project lists from a single JSON file</li>
+                  <li>Responsive mobile-first layout and system-preference-aware dark mode</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Approach</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">What I Built</div>
+                <ul class="terminal-list">
+                  <li><strong>JSON-to-HTML Builder:</strong> A Node.js compile script parsing project metadata to generate and inject templated, layout-safe project cards across multiple category pages.</li>
+                  <li><strong>ASCII Rule Engine:</strong> Dynamic runtime script generating uniform rule lines using repeating ASCII markers (<code>=</code>, <code>-</code>) with custom terminal-style cap characters (<code>+</code>).</li>
+                  <li><strong>Theme Controller:</strong> Client-side logic for setting and persisting user theme preferences without page flicker.</li>
+                  <li><strong>Site Architecture:</strong> Minimal CSS grid layouts combined with lightweight media-free SVG graphics to ensure instant page load speeds.</li>
+                </ul>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Cross-Disciplinary Read</div>
+                <p>This project connects software design patterns to systems engineering principles. By treating metadata as the single source of truth, it implements an engineering pipeline for static assets similar to software compilation steps.</p>
+                <p>Additionally, it emphasizes accessibility and constraint-driven design: by leveraging text characters rather than image-heavy components, it presents information clearly, proving that visual identity can be established with clean layout logic alone.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span class="rule-segment" data-rule="-"></span><span>Outcome</span><span class="rule-segment" data-rule="-"></span></h2>
+          <div class="detail-grid">
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Result</div>
+                <p>The final site loads instantly, scoring 100% on performance metrics across desktop and mobile. It is highly maintainable, requiring a single npm build command to update links, tags, and cards globally.</p>
+                <p>It demonstrates the capability to deploy custom web layouts using raw web standard APIs (HTML, CSS, JS) without reliance on heavy dependencies or external framework lock-ins.</p>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+
+            <article class="ascii-box panel">
+              <span class="rule-line" data-rule="="></span>
+              <div class="box-content">
+                <div class="mini-heading">Takeaways</div>
+                <ul class="inline-list">
+                  <li>Separating content (JSON) from presentation (HTML templates) simplifies portfolio maintenance</li>
+                  <li>Responsive design and micro-animations can be achieved using vanilla CSS variables</li>
+                  <li>Minimizing third-party runtime dependencies results in unmatched loading speeds and security</li>
+                </ul>
+                <div class="card-links">
+                  <a class="ascii-button" href="../software.html">Back to software</a>
+                  <a class="ascii-button" href="../index.html#featured">View featured projects</a>
+                </div>
+              </div>
+              <span class="rule-line" data-rule="="></span>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <span class="rule-line" data-rule="="></span>
+        <span>&copy; <span id="year"></span> Nathan Peredery</span>
+        <span>Project 13</span>
+      </footer>
+    </div>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

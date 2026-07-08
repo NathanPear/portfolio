@@ -1,0 +1,20 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#efe4cc"/>
+  <rect x="36" y="36" width="1128" height="628" stroke="#111111" stroke-width="4"/>
+  <path d="M140 560H1060" stroke="#8b5e34" stroke-width="6" stroke-linecap="round"/>
+  <path d="M600 560V170" stroke="#111111" stroke-width="6" stroke-dasharray="18 14"/>
+  <path d="M600 560L910 300" stroke="#111111" stroke-width="5"/>
+  <path d="M600 560L300 300" stroke="#111111" stroke-width="5"/>
+  <path d="M600 560L760 220" stroke="#111111" stroke-width="4" stroke-dasharray="10 10"/>
+  <path d="M600 560L440 220" stroke="#111111" stroke-width="4" stroke-dasharray="10 10"/>
+  <circle cx="600" cy="560" r="42" fill="#f7f0df" stroke="#111111" stroke-width="5"/>
+  <circle cx="600" cy="560" r="10" fill="#111111"/>
+  <rect x="560" y="170" width="80" height="90" rx="8" fill="#fff8e8" stroke="#111111" stroke-width="5"/>
+  <rect x="544" y="122" width="112" height="60" rx="10" fill="#fff8e8" stroke="#111111" stroke-width="5"/>
+  <circle cx="600" cy="150" r="12" fill="#111111"/>
+  <path d="M738 248C778 266 812 298 830 340" stroke="#111111" stroke-width="5"/>
+  <path d="M790 225C850 255 893 307 912 370" stroke="#111111" stroke-width="4" stroke-dasharray="10 12"/>
+  <text x="80" y="110" fill="#111111" font-family="IBM Plex Mono, monospace" font-size="36" font-weight="700">ULTRASONIC ROOM SCANNER</text>
+  <text x="80" y="155" fill="#4f4a42" font-family="IBM Plex Mono, monospace" font-size="22">stepper sweep + distance sensing + MATLAB-ready map output</text>
+  <text x="80" y="610" fill="#4f4a42" font-family="IBM Plex Mono, monospace" font-size="20">360&deg; sweep / idle alignment / filtered readings</text>
+</svg>

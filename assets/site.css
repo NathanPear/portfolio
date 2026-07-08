@@ -151,6 +151,14 @@ button, input, textarea, select { font-family: var(--mono); }
   outline-offset: -3px;
 }
 
+.social-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .theme-toggle,
 .menu-toggle {
   aspect-ratio: 1 / 1;
@@ -242,7 +250,6 @@ h1 {
   gap: 20px;
 }
 .hero-links,
-.quick-links,
 .button-row,
 .crumbs,
 .card-links {
@@ -250,6 +257,21 @@ h1 {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 20px;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+  width: 100%;
+}
+.quick-links .ascii-button {
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-aside {
@@ -274,8 +296,16 @@ h1 {
   border: 1px solid var(--line);
   background: var(--bg);
 }
-.panel-image { height: 170px; overflow: hidden; }
-.panel-image img { height: 100%; filter: grayscale(1) contrast(1.1); }
+.panel-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.panel-image img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1) contrast(1.1);
+}
 
 .terminal-list,
 .inline-list {
@@ -332,6 +362,11 @@ h1 {
 .about-layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
 .featured-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.project-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 36px;
+}
 
 .panel, .project-card { min-width: 0; }
 .panel p:first-child, .project-body p:first-child { margin-top: 0; }
@@ -512,10 +547,64 @@ h1 {
 }
 .metric strong { display: block; font-size: 0.95rem; line-height: 1.35; }
 
+.about-carousel {
+  float: left;
+  margin: 0 20px 10px 0;
+  min-width: 0;
+}
+.about-carousel .portrait {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  min-height: 0;
+  overflow: hidden;
+  padding: 8px;
+}
+.about-carousel .portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+}
+.about-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.18s ease, background 0.1s ease;
+  z-index: 10;
+  padding: 0;
+}
+.about-carousel:hover .carousel-btn {
+  opacity: 1;
+}
+.about-carousel .carousel-btn:hover {
+  background: var(--soft);
+}
+.about-carousel .prev-btn {
+  left: 14px;
+}
+.about-carousel .next-btn {
+  right: 14px;
+}
+
 @media (max-width: 980px) {
   .featured-grid,
-  .detail-grid,
   .tree-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-grid,
   .about-layout { grid-template-columns: 1fr; }
 }
@@ -531,10 +620,11 @@ h1 {
   .section { padding: 34px 0; }
   .section-title > span:not(.rule-segment) { padding: 0 0.9ch; }
   .featured-grid,
+  .project-cards,
   .detail-grid,
   .tree-grid,
   .mini-grid { grid-template-columns: 1fr; }
-  .panel-image { height: 145px; }
+  .panel-image { aspect-ratio: 1 / 1; }
 }
 
 @media (max-width: 390px) {
@@ -542,4 +632,12 @@ h1 {
   .wordmark { letter-spacing: 0.03em; }
   .hero-links .ascii-button,
   .card-links .ascii-button { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .about-carousel {
+    float: none;
+    margin: 0 auto 16px auto;
+    display: table;
+  }
 }
